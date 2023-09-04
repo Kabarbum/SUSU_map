@@ -1,0 +1,1 @@
+pg_restore -U postgres -d susu-3dmap -1 susu-3dmap.sql

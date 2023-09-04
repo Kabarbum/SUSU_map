@@ -1,0 +1,1 @@
+export const toRadians = (number) => { return number * Math.PI / 180; }

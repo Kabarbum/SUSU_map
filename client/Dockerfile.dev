@@ -1,0 +1,10 @@
+FROM node:16.13.2
+WORKDIR /app
+COPY package*.json ./
+RUN npm i
+COPY . .
+
+ENV REACT_APP_SERVER_URL=http://localhost:5000/
+
+EXPOSE 3000
+CMD ["npm", "run", "start"]

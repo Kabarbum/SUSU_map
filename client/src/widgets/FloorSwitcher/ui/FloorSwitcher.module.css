@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+.FloorSwitcher{
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+    right: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 3px;
+    background-color: #a4a4a4;
+    z-index: 10;
+}
+.item{
+    font-family: 'Roboto Mono', monospace;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+.item.active{
+    background-color: #afafaf;
+}

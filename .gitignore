@@ -1,0 +1,18 @@
+.idea
+# dependencies
+client/node_modules
+server/node_modules
+
+# testing
+/coverage
+
+# production
+client/build
+server/build
+
+# misc
+client/.env
+server/.env
+
+# postgres data
+db/postgres-data

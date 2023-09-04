@@ -1,0 +1,63 @@
+version: '3.5'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports:
+      - '8080:80'
+    depends_on:
+      - api
+      - client
+    restart: always
+  db:
+    image: postgres:15
+    container_name: map-database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: susu-3dmap
+    volumes:
+      - ./db/susu-3dmap.sql:/docker-entrypoint-initdb.d/susu-3dmap.sql
+      - ./db/restore.sh:/docker-entrypoint-initdb.d/restore.sh
+      - ./db/postgres-data:/var/lib/postgresql/data
+    restart: always
+#  pg_admin:
+#    image: dpage/pgadmin4
+#    container_name: map-pgadmin
+#    ports:
+#      - "5050:80"
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: email@email.com
+#      PGADMIN_DEFAULT_PASSWORD: root
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    container_name: map-server
+    environment:
+      DB_NAME: susu-3dmap
+      DB_USER: postgres
+      DB_PASSWORD: 1
+      DB_HOST: host.docker.internal
+      DB_PORT: 5432
+    ports:
+      - "5000:5000"
+    restart: always
+    depends_on:
+      - db
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    container_name: map-client
+    #    environment:
+    #      REACT_APP_SERVER_URL: http://127:0:0:1:5000/
+#    ports:
+#      - "3000:3000"
+    restart: always
+    depends_on:
+      - api
+volumes:
+  postgres-data:

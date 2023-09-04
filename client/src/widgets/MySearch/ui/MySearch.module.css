@@ -1,0 +1,64 @@
+.MySearch {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 300px;
+    height: 68px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(48,48,48,.8);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+    z-index: 10;
+}
+.topContent{
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MySearchInput{
+    width: 100%;
+    height: 100%;
+    padding: 10px 8px;
+    background-color: #fff;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 2px;
+    border:none;
+}
+.MySearchButton{
+    width: 48px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3px;
+    padding: 10px;
+    background: #29a8ce;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.MySearchButtonImg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.bottomContent{
+    width: 100%;
+    height: 16px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.bottomContent label{
+    margin-right: 12px;
+}
+.bottomContent input{
+    margin-right: 2px;
+}
