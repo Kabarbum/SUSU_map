@@ -1,10 +1,12 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # Docker
 
+## dev
+
 run docker-compose up --build -d
+
+## prod
+
+in client folder run Dockerfile
 
 ### To load database backup
 
