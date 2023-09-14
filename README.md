@@ -1,14 +1,14 @@
 # Docker
 
-## dev
+### dev
 
 run docker-compose up --build -d
 
-## prod
+### prod
 
 in client folder run Dockerfile
 
-### To load database backup
+## To load database backup
 
 docker exec -it map-database bash
 
